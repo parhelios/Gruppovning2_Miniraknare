@@ -3,7 +3,7 @@
 public class CalculatorService :ICalculatorService
 {
 
-	public List<Result> ResultsList { get; set; }
+	public List<Result> ResultsList { get; set; } = new();
 
 	public List<Result> GetValuesList()
 	{
