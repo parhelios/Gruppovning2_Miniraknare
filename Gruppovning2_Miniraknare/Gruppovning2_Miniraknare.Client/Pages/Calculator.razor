@@ -11,9 +11,10 @@
 <MudButton Variant="Variant.Filled">*</MudButton>
 <MudButton Variant="Variant.Filled">/</MudButton>
 
-<EditForm FormName="InputForm" Model="CalculatorService" OnValidSubmit="SaveValue">
+<EditForm FormName="InputForm" Model="InputValues" OnValidSubmit="SaveValues">
 	<InputText @bind-Value="InputValues.Value1"></InputText>
 	<InputText @bind-Value="InputValues.Value2"></InputText>
+	<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled">Submit</MudButton>
 </EditForm>
 
 
@@ -21,9 +22,21 @@
 
 	private Values InputValues { get; set; } = new();
 
-	private void SaveValue()
-	{
+	private ConvertedValues ConvertedInputValues { get; set; }
 
+	private void SaveValues()
+	{
+		var input1 = double.Parse(InputValues.Value1);
+		var input2 = double.Parse(InputValues.Value2);
+
+		ConvertedInputValues.Value1 = input1;
+		ConvertedInputValues.Value2 = input2;
+
+		CalculatorService.AddValues(ConvertedInputValues);
+		CalculatorService.SubtractValues(ConvertedInputValues);
+		CalculatorService.MultiplyValues(ConvertedInputValues);
+		CalculatorService.DivideValues(ConvertedInputValues);
+		
 	}
 
 }

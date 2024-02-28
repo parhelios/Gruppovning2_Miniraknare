@@ -4,9 +4,14 @@ public interface ICalculatorService
 {
 	List<Values> GetValuesList();
 
-	void AddValue(Values values);
+	//void AddResult(ConvertedValues values);
 
-	Result MultiplyValues(Values values);
+	Result AddValues(ConvertedValues values);
 
-	Result AddValues(Values values);
+	Result SubtractValues(ConvertedValues values);
+
+	Result MultiplyValues(ConvertedValues values);
+
+	Result DivideValues(ConvertedValues values);
+
 }

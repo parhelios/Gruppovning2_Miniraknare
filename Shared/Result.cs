@@ -4,6 +4,5 @@ namespace Shared;
 
 public class Result
 {
-	[Required]
-	public double OutputResult { get; set; }
+	public double Value { get; set; }
 }
