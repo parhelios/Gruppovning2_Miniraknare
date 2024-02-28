@@ -1,0 +1,29 @@
+﻿@page "/Calculator"
+@using Shared
+@rendermode InteractiveServer
+@inject ICalculatorService CalculatorService
+<h3>Calculator</h3>
+
+
+
+<MudButton Variant="Variant.Filled">+</MudButton>
+<MudButton Variant="Variant.Filled">-</MudButton>
+<MudButton Variant="Variant.Filled">*</MudButton>
+<MudButton Variant="Variant.Filled">/</MudButton>
+
+<EditForm FormName="InputForm" Model="CalculatorService" OnValidSubmit="SaveValue">
+	<InputText @bind-Value="InputValues.Value1"></InputText>
+	<InputText @bind-Value="InputValues.Value2"></InputText>
+</EditForm>
+
+
+@code {
+
+	private Values InputValues { get; set; } = new();
+
+	private void SaveValue()
+	{
+
+	}
+
+}
