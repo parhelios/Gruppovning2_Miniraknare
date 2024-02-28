@@ -11,9 +11,11 @@
 </EditForm> *@
 
 <EditForm FormName="InputForm" Model="Input" OnValidSubmit="OnSubmit">
-	<InputText @bind-Value="Input"></InputText>
+	@* <InputText @bind-Value="Input"></InputText> *@
+	<MudTextField @bind-Value="Input" Label="Enter Calculation" Variant="Variant.Outlined"></MudTextField>
 	<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled">Submit</MudButton>
 </EditForm>
+
 
 
 <Virtualize Items="CalculatorService.GetValuesList()">

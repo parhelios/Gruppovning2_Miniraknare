@@ -1,5 +1,6 @@
 using Gruppovning2_Miniraknare.Client.Pages;
 using Gruppovning2_Miniraknare.Components;
+using MudBlazor.Services;
 using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddSingleton<ICalculatorService, CalculatorService>();
+builder.Services.AddMudServices();
 
 
 var app = builder.Build();
