@@ -3,60 +3,49 @@
 public class CalculatorService :ICalculatorService
 {
 
-	public List<Values> ValuesList { get; set; }
+	public List<Result> ResultsList { get; set; }
 
-	public List<Values> GetValuesList()
+	public List<Result> GetValuesList()
 	{
-		return ValuesList;
+		return ResultsList;
 	}
 
-	public void AddValue(ConvertedValues values)
+	public void AddResult(Result result)
 	{
-		throw new NotImplementedException();
+		ResultsList.Add(result);
 	}
 
 	public Result AddValues(ConvertedValues values)
 	{
-		throw new NotImplementedException();
+		var result = new Result();
+		result.Value = values.Value1 + values.Value2;
+
+		return result;
+
 	}
 
 	public Result SubtractValues(ConvertedValues values)
 	{
-		throw new NotImplementedException();
+		var result = new Result();
+		result.Value = values.Value1 - values.Value2;
+
+		return result;
 	}
 
 	public Result MultiplyValues(ConvertedValues values)
 	{
-		throw new NotImplementedException();
+		var result = new Result();
+		result.Value = values.Value1 * values.Value2;
+
+		return result;
 	}
 
 	public Result DivideValues(ConvertedValues values)
 	{
-		throw new NotImplementedException();
+		var result = new Result();
+		result.Value = values.Value1 / values.Value2;
+
+		return result;
 	}
 
-	public void AddValue(Values values)
-	{
-		throw new NotImplementedException();
-	}
-
-	public Result SubtractValues(Values values)
-	{
-		throw new NotImplementedException();
-	}
-
-	public Result MultiplyValues(Values values)
-	{
-		throw new NotImplementedException();
-	}
-
-	public Result DivideValues(Values values)
-	{
-		throw new NotImplementedException();
-	}
-
-	public Result AddValues(Values values)
-	{
-		throw new NotImplementedException();
-	}
 }

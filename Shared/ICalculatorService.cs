@@ -2,9 +2,9 @@
 
 public interface ICalculatorService
 {
-	List<Values> GetValuesList();
+	List<Result> GetValuesList();
 
-	//void AddResult(ConvertedValues values);
+	void AddResult(Result result);
 
 	Result AddValues(ConvertedValues values);
 

@@ -3,6 +3,6 @@ using Shared;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-builder.Services.AddSingleton<CalculatorService>();
+builder.Services.AddSingleton<ICalculatorService, CalculatorService>();
 
 await builder.Build().RunAsync();
