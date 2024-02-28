@@ -33,7 +33,7 @@
 
 	private void OnSubmit()
 	{
-		var operators = new string[] { "+", "-", "*", "/" };
+		var operators = new[] { "+", "-", "*", "/" };
 		var selectedOperator = string.Empty;
 
 		foreach (var op in operators)
@@ -55,8 +55,7 @@
 						selectedOperator = "/";
 						break;
 					default:
-						// Handle unexpected operator
-						break;
+						return;
 				}
 			}
 		}
