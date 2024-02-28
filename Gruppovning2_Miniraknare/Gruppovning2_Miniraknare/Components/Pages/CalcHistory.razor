@@ -1,6 +1,19 @@
 ﻿@page "/CalcHistory"
+@rendermode InteractiveServer
+@inject ICalculatorService CalculatorService
+@using Shared
+
 <h3>CalcHistory</h3>
 
+
+
+<Virtualize Items="CalculatorService.GetValuesList()">
+	<div class="card">
+		<div class="card-body">
+			<h1>@context.Value</h1>
+		</div>
+	</div>
+</Virtualize>
 
 @code {
 
