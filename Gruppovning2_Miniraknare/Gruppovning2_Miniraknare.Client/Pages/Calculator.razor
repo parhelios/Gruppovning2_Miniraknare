@@ -4,21 +4,30 @@
 @inject ICalculatorService CalculatorService
 <h3>Calculator</h3>
 
-
-
-<MudButton Variant="Variant.Filled">+</MudButton>
-<MudButton Variant="Variant.Filled">-</MudButton>
-<MudButton Variant="Variant.Filled">*</MudButton>
-<MudButton Variant="Variant.Filled">/</MudButton>
-
-<EditForm FormName="InputForm" Model="InputValues" OnValidSubmit="SaveValues">
+@* <EditForm FormName="InputForm" Model="InputValues" OnValidSubmit="SaveValues">
 	<InputText @bind-Value="InputValues.Value1"></InputText>
 	<InputText @bind-Value="InputValues.Value2"></InputText>
+	<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled">Submit</MudButton>
+</EditForm> *@
+
+<EditForm FormName="InputForm" Model="Input" OnValidSubmit="Callback">
+	<InputText @bind-Value="Input"></InputText>
 	<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled">Submit</MudButton>
 </EditForm>
 
 
+
 @code {
+
+	private string Input { get; set; }
+
+	private void Callback()
+	{
+		throw new NotImplementedException();
+	}
+
+
+	//-----------------------------------
 
 	private Values InputValues { get; set; } = new();
 
